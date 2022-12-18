@@ -1,0 +1,156 @@
+$primary-color: #222831;
+$accent-color: #393E46;
+$secondary-color: #00ADB5;
+$text-color: #EEEEEE;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: $text-color;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    padding: 20px;
+
+    &__card {
+        display: flex;
+
+        .profiles__profile {
+            width: 450px;
+            height: 474px;
+
+            background-color: $primary-color;
+
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+
+            &_no-pet {
+                .profiles__user {
+                    height: 100%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .profiles__title {
+                font-weight: 600;
+                text-align: center;
+
+                background-color: $accent-color;
+
+                padding: 5px 0;
+
+                &_br20 {
+                    border-top-left-radius: 20px;
+                }
+            }
+
+            .profiles__user,
+            .profiles__pet {
+                display: flex;
+                align-items: center;
+                gap: 55px;
+
+                padding: 25px;
+            }
+
+            .profiles__user-img,
+            .profiles__pet-img {
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+            }
+        }
+
+        .profiles__ad {
+            height: 474px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            background-color: $secondary-color;
+
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            &-img {
+                width: 230px;
+                height: 250px;
+            }
+
+            &-title {
+                width: 100%;
+
+                position: relative;
+
+                font-weight: 600;
+                text-align: center;
+                background-color: $accent-color;
+
+                border-top-right-radius: 20px;
+
+                margin-bottom: 45px;
+                padding: 5px 0;
+
+                &::before {
+                    content: "";
+
+                    width: 2px;
+
+                    position: absolute;
+                    top: 0;
+                    left: -2px;
+
+                    display: inline-block;
+
+                    border-top: 38px $primary-color solid;
+                }
+            }
+
+            .profiles__product {
+                font-weight: 500;
+                font-size: 25px;
+                text-transform: capitalize;
+            }
+
+            .profiles__price {
+                font-weight: 500;
+                font-size: 30px;
+
+                margin-bottom: 20px;
+            }
+
+            .profiles__buy-btn {
+                width: 100px;
+                height: 40px;
+
+                font-weight: 500;
+                color: $text-color;
+                background-color: $accent-color;
+
+                border: none;
+                border-radius: 20px;
+
+                transition: .2s ease-in-out;
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #EEEEEE;
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+}
+.profiles__card {
+  display: flex;
+}
+.profiles__card .profiles__profile {
+  width: 450px;
+  height: 474px;
+  background-color: #222831;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.profiles__card .profiles__profile_no-pet .profiles__user {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profiles__card .profiles__profile .profiles__title {
+  font-weight: 600;
+  text-align: center;
+  background-color: #393E46;
+  padding: 5px 0;
+}
+.profiles__card .profiles__profile .profiles__title_br20 {
+  border-top-left-radius: 20px;
+}
+.profiles__card .profiles__profile .profiles__user,
+.profiles__card .profiles__profile .profiles__pet {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  padding: 25px;
+}
+.profiles__card .profiles__profile .profiles__user-img,
+.profiles__card .profiles__profile .profiles__pet-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.profiles__card .profiles__ad {
+  height: 474px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00ADB5;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.profiles__card .profiles__ad-img {
+  width: 230px;
+  height: 250px;
+}
+.profiles__card .profiles__ad-title {
+  width: 100%;
+  position: relative;
+  font-weight: 600;
+  text-align: center;
+  background-color: #393E46;
+  border-top-right-radius: 20px;
+  margin-bottom: 45px;
+  padding: 5px 0;
+}
+.profiles__card .profiles__ad-title::before {
+  content: "";
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: -2px;
+  display: inline-block;
+  border-top: 38px #222831 solid;
+}
+.profiles__card .profiles__ad .profiles__product {
+  font-weight: 500;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.profiles__card .profiles__ad .profiles__price {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.profiles__card .profiles__ad .profiles__buy-btn {
+  width: 100px;
+  height: 40px;
+  font-weight: 500;
+  color: #EEEEEE;
+  background-color: #393E46;
+  border: none;
+  border-radius: 20px;
+  transition: 0.2s ease-in-out;
+}
+.profiles__card .profiles__ad .profiles__buy-btn:hover {
+  background-color: #222831;
+}
+
+/*# sourceMappingURL=style.css.map */
