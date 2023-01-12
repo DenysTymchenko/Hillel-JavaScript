@@ -2,11 +2,6 @@ function generateNumber(max, min) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-function gerRandomImg() {
-
-}
-
-
 const body = document.querySelector('body');
 const imgContainer = document.createElement('div');
 imgContainer.classList.add('img-container');
