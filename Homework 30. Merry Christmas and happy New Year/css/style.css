@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Christmas";
+  src: url("../fonts/MerryChristmasFlake.eot");
+  src: url("../fonts/MerryChristmasFlake.eot?#iefix") format("embedded-opentype"), url("../fonts/MerryChristmasFlake.woff2") format("woff2"), url("../fonts/MerryChristmasFlake.woff") format("woff"), url("../fonts/MerryChristmasFlake.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Christmas";
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.main__card {
+  position: relative;
+  font-size: 32px;
+  background-color: white;
+  max-width: 500px;
+  padding: 30px;
+  margin: 0 5px;
+}
+@media screen and (max-width: 375px) {
+  .main__card {
+    font-size: 20px;
+  }
+}
+.main__card .main__pin-img {
+  width: 8%;
+  position: absolute;
+  bottom: 90%;
+}
+.main__card .main__pin-img_left {
+  left: 0;
+}
+.main__card .main__pin-img_right {
+  left: 94%;
+}
+.main__presents {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.main__presents .main__a {
+  width: 150px;
+}
+@media screen and (max-width: 550px) {
+  .main__presents .main__a {
+    width: 90px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .main__presents .main__a {
+    width: 50px;
+  }
+}
+.main__presents .main__a .main__present-img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
