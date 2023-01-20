@@ -16,12 +16,7 @@ img.src = images[position];
 prevBtn.addEventListener('click', () =>{
     position--;
 
-    if(position === 0){
-        prevBtn.setAttribute('disabled', '');
-    }
-    else if(position === images.length - 2){
-        nextBtn.removeAttribute('disabled');
-    }
+    position === 0 ? prevBtn.setAttribute('disabled', '') : nextBtn.removeAttribute('disabled');
 
     img.src = images[position];
 });
@@ -29,12 +24,7 @@ prevBtn.addEventListener('click', () =>{
 nextBtn.addEventListener('click', () =>{
     position++
 
-    if(position === images.length - 1){
-        nextBtn.setAttribute('disabled', '');
-    }
-    else if(position === 1){
-        prevBtn.removeAttribute('disabled');
-    }
+    position === images.length - 1 ? nextBtn.setAttribute('disabled', '') : prevBtn.removeAttribute('disabled');
 
     img.src = images[position];
  });
