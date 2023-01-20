@@ -18,7 +18,8 @@ prevBtn.addEventListener('click', () =>{
 
     if(position === 0){
         prevBtn.setAttribute('disabled', '');
-    }else{
+    }
+    else if(position === images.length - 2){
         nextBtn.removeAttribute('disabled');
     }
 
@@ -30,7 +31,8 @@ nextBtn.addEventListener('click', () =>{
 
     if(position === images.length - 1){
         nextBtn.setAttribute('disabled', '');
-    }else{
+    }
+    else if(position === 1){
         prevBtn.removeAttribute('disabled');
     }
 
