@@ -132,7 +132,6 @@ const nav = document.querySelector('nav');
 const productsDiv = document.querySelector('.category-products'); //block with all products from one category
 const productPage = document.querySelector('.product-page'); //block with product's detailed info
 const form = document.querySelector('.product-page form'); //form for placing an order;
-form.remove();
 
 function addNavigation(categories) {
     const ul = document.createElement('ul');
