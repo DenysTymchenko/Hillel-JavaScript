@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 41</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+
+            display: flex;
+
+            font-family: sans-serif;
+            color: #DDDDDD;
+        }
+
+        nav {
+            width: 10%;
+            background-color: #222831;
+            text-align: center;
+            padding: 10px 5px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        nav li a {
+            color: #DDDDDD;
+            text-decoration: none;
+            box-shadow: inset 0 0 0 0 #F05454;
+            padding: 5px;
+
+            transition: .3s all ease-in-out;
+        }
+
+        li a:hover {
+            box-shadow: inset 100px 0 0 0 #F05454;
+        }
+
+        .category-products {
+            width: 50%;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            background-color: #DDDDDD;
+
+            padding: 10px 5px;
+        }
+
+        .category-products .product-card {
+            width: 175px;
+            height: fit-content;
+
+            text-align: center;
+            background-color: #F05454;
+
+            cursor: pointer;
+
+            padding: 10px;
+        }
+
+        .category-products .product-card img {
+            transition: 0.3s all ease-in-out;
+        }
+
+        .category-products .product-card:hover img {
+            box-shadow: #DDDDDD 0px 8px 24px;
+        }
+
+        .category-products .product-card>h2 {
+            margin: 10px 0;
+        }
+
+        .product-page {
+            width: 40%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            text-align: center;
+            background-color: #222831;
+
+            overflow: auto;
+
+            padding: 10px 20px;
+        }
+
+        .product-page .wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .product-page .wrapper span {
+            font-size: 20px;
+            color: #F05454;
+        }
+
+        .product-page .wrapper button {
+            width: 100px;
+            height: 35px;
+
+            font-size: 15px;
+            background-color: #F05454;
+            color: #DDDDDD;
+
+            cursor: pointer;
+
+            margin-left: 10px;
+
+            transition: .3s all ease-in-out;
+        }
+
+        .product-page .wrapper button:hover {
+            font-size: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            text-align: start;
+            background-color: #F05454;
+
+            padding: 20px;
+        }
+
+        form h1 {
+            text-align: center;
+        }
+
+        form h2,
+        form h3 {
+            margin-bottom: 10px;
+        }
+
+        form .delivery-info textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        form .delivery-info .payment-info,
+        form .payment-info .card-info {
+            margin: 10px 0;
+        }
+
+        form .payment-info textarea {
+            padding: 10px;
+        }
+
+        .payment-info .card-info input {
+            margin-bottom: 5px;
+        }
+
+        .payment-info .card-info input[type=number]:first-child {
+            width: 140px;
+        }
+
+        .payment-info .card-info input[type=number]:last-child {
+            width: 40px;
+        }
+
+        form button {
+            height: 35px;
+
+            font-size: 15px;
+            background-color: #DDDDDD;
+            color: #F05454;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s all ease-in-out;
+        }
+
+        form button:hover {
+            font-size: 20px;
+        }
+
+        .ammount-info input {
+            width: 40px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .hint {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .category-products .hint h1 {
+            color: #222831;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            color: #222831;
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav></nav>
+
+    <div class="category-products">
+        <div class="hint">
+            <h1>Select category</h1>
+        </div>
+    </div>
+
+    <div class="product-page">
+        <div class="hint">
+            <h1>Select product</h1>
+        </div>
+
+        <form class="d-none">
+            <h1>Placing an order</h1>
+
+            <div class="contact-info">
+                <h2>Contact info</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+
+                <label for="surname">Surname:</label>
+                <input type="text" name="surname" id="surname" required>
+            </div>
+
+            <div class="delivery-info">
+                <h2>Delivery</h2>
+
+                <label for="city">City:</label>
+                <select name="city" id="city" required>
+                    <option value="Mykolaiv">Mykolaiv</option>
+                    <option value="Odesa">Odesa</option>
+                    <option value="Chernivtsi">Chernivtsi</option>
+                </select>
+
+                <label for="post-office">Post Office:</label>
+                <input type="text" name="post-office" id="post-office" required>
+
+                <div class="payment-info">
+                    <h3>Pay method</h3>
+
+                    <input type="radio" name="payment" id="postpaid" checked required>
+                    <label for="postpaid">Postpaid</label>
+
+                    <input type="radio" name="payment" id="card">
+                    <label for="card">Card</label>
+
+                    <div class="card-info d-none">
+                        <label for="card-number">Card number:</label>
+                        <input type="number" name="card-number" id="card-number">
+
+                        <br>
+
+                        <label for="expiration">Expiration date:</label>
+                        <input type="date" name="expiration" id="expiration">
+
+                        <br>
+
+                        <label for="cvv">CVV:</label>
+                        <input type="number" name="cvv" id="cvv">
+                    </div>
+                </div>
+
+                <h3>Comment</h3>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="ammount-info">
+                <label for="ammount">Ammount:</label>
+                <input type="number" name="ammount" id="ammount" min="1" value="1">
+            </div>
+
+            <button>Place order</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
