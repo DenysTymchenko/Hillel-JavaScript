@@ -77,7 +77,6 @@ function renderComments(container, comments) {
         const commentP = document.createElement('p');
 
         commentDiv.classList.add('comment');
-        //commentDiv.classList.add(`comment-${comment.postId}`);
 
         commentP.innerText = comment.body;
 
