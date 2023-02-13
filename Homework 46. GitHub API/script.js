@@ -5,18 +5,18 @@ async function getData(action) {
     return data;
 }
 
-async function getGitHubUserInfo(username) {
-    const info = await getData(API + `users/${username}`);
-    return info;
+async function getGitHubUserData(username) {
+    const data = await getData(API + `users/${username}`);
+    return data;
 }
 
-function renderGitHubInfo(info) {
+function renderGitHubData(data) {
     const card = document.createElement('div');
     const avatar = document.createElement('img');
-    const infoBlock = document.createElement('div');
+    const infoBlock = document.createElement('div');//div that contains all info, except avatar
     const username = document.createElement('h2');
-    const profileLink = document.createElement('a');
-    const wrapper = document.createElement('div');
+    const profileLink = document.createElement('a');// link that'll be inside of h2(username), so client could go to GitHub profile page of user he was looking for. 
+    const wrapper = document.createElement('div'); //wrapper for followers and following paragraphs
     const followers = document.createElement('p');
     const following = document.createElement('p');
     const repositories = document.createElement('p');
@@ -28,13 +28,13 @@ function renderGitHubInfo(info) {
     wrapper.classList.add('wrapper');
     repositories.classList.add('user-repos');
 
-    avatar.src = info.avatar_url;
-    profileLink.href = info.html_url;
+    avatar.src = data.avatar_url;
+    profileLink.href = data.html_url;
 
-    profileLink.innerText = info.login;
-    followers.innerText = `Followers: ${info.followers}`;
-    following.innerText = `Following: ${info.following}`;
-    repositories.innerText = `Repositories: ${info.public_repos}`;
+    profileLink.innerText = data.login;
+    followers.innerText = `Followers: ${data.followers}`;
+    following.innerText = `Following: ${data.following}`;
+    repositories.innerText = `Repositories: ${data.public_repos}`;
 
     card.append(avatar);
     card.append(infoBlock);
@@ -58,15 +58,19 @@ const usernameInput = document.querySelector('#username');
 const getInfoBtn = document.querySelector('.get-info-btn');
 
 getInfoBtn.addEventListener('click', async () => {
+    //we always clean error paragraph at the start of this function.
     const errorP = document.querySelector('.error');
     errorP.innerText = '';
 
+    //then we trying to get data from GitHub API.
+    //if it was successful -- we render that data.
+    //otherwise we displaying error msg inside of errorP
     try {
-        const info = await getGitHubUserInfo(usernameInput.value);
-        if (info.message === 'Not Found') {
+        const data = await getGitHubUserData(usernameInput.value);
+        if (data.message === 'Not Found') {
             throw new Error('There is no GitHub page with this username')
         } else {
-            renderGitHubInfo(info);
+            renderGitHubData(data);
         }
     } catch (error) {
         errorP.innerText = error;
