@@ -58,7 +58,7 @@ const usernameInput = document.querySelector('#username');
 const getInfoBtn = document.querySelector('.get-info-btn');
 
 getInfoBtn.addEventListener('click', async () => {
-    //we always clean error paragraph at the start of this function.
+    //we always clear error paragraph at the start of this function.
     const errorP = document.querySelector('.error');
     errorP.innerText = '';
 
