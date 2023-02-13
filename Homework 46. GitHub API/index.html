@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 46</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            background-color: #222831;
+            color: #EEEEEE;
+        }
+
+        a {
+            color: #EEEEEE;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .controls .wrapper #username {
+            width: 175px;
+        }
+
+        .controls .error {
+            color: #C92C6D;
+        }
+
+        .user-card {
+            width: 450px;
+
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            background-color: #00ADB5;
+
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .user-avatar {
+            width: 205px;
+            border-radius: 50%;
+        }
+
+        .user-name,
+        .user-repos {
+            text-align: center;
+        }
+
+        .user-card .wrapper {
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <div class="wrapper">
+            <input id="username" type="text" placeholder="Enter GitHub username here">
+            <button class="get-info-btn">Get information</button>
+        </div>
+        <p class="error"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
