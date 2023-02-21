@@ -1,3 +1,4 @@
+//__________________Classes______________________
 class Hero {
     constructor(id, name, universe, favorite) {
         this._id = id;
@@ -87,6 +88,8 @@ class Hero {
     }
 }
 
+//________________________FUNCTIONS_______________________________
+
 async function controller(method, action, body) {
     const URL = `${API}/${action}`;
 
@@ -158,6 +161,8 @@ function addNewHero(id, name, universe, favorite) {
 
     new Hero(id, name, universe, favorite).render(); //also creating new instance of Hero, and render it.
 }
+
+//__________________________________________MAIN_CODE_________________________________________________
 
 const API = 'https://63ef5f59271439b7fe6d10b5.mockapi.io';
 
