@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 47</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form class="add-hero-form">
+        <h2>Add new hero</h2>
+
+        <label>
+            Name:
+            <input type="text" id="hero_name" placeholder="Iron Man">
+        </label>
+
+        <label>
+            Universe:
+            <select id="universe"></select>
+        </label>
+
+        <label>
+            Favorite:
+            <button class="favorite-btn" favorite="false">
+                <img class="favorite-img" src="images/not-favorite.png" alt="star img">
+            </button>
+        </label>
+
+        <button class="add-hero-btn">Add</button>
+
+        <p class="error d-none">This hero already exists</p>
+    </form>
+
+    <section class="heroes-cards">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
