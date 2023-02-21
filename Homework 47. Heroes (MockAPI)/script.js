@@ -57,7 +57,7 @@ class Hero {
         buttonFavorite.setAttribute('favorite', `${this._favorite}`);
 
         imgFavorite.alt = 'star img';
-        this._favorite ? imgFavorite.src = 'images/favorite.png' : imgFavorite.src = 'images/not-favorite.png';
+        this._favorite === 'true' ? imgFavorite.src = 'images/favorite.png' : imgFavorite.src = 'images/not-favorite.png';
 
         buttonFavorite.addEventListener('click', () => {
             const favoriteValue = buttonFavorite.getAttribute('favorite');
