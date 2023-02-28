@@ -1,11 +1,8 @@
-import { sum } from './sum.js';
-import { sub } from './sub.js';
-import { mult } from './mult.js';
-import { div } from './div.js';
+const sum = require('./sum');
+const sub = require('./sub');
+const mult = require('./mult');
+const div = require('./div');
 
-export class Calculator {
-    sum = sum;
-    sub = sub;
-    mult = mult;
-    div = div;
-}
+const calculator = { sum, sub, mult, div };
+
+module.exports = calculator;

@@ -1,3 +1,5 @@
-export function sum(x, y) {
+function sum(x, y) {
     return x + y;
 }
+
+module.exports = sum;

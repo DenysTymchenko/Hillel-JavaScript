@@ -1,6 +1,4 @@
-import { Calculator } from "./calculator/calculator.js";
-
-const calculator = new Calculator();
+const calculator = require('./calculator/calculator');
 
 console.log(calculator.sum(10, 10)); //20
 console.log(calculator.sub(10, 10)); //0
